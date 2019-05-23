@@ -383,7 +383,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../OPD/resource.qrc \
 		/usr/lib/qt5/bin/rcc \
-		../OPD/resourses/2.png
+		../OPD/resourses/2.png \
+		../OPD/resourses/4.png \
+		../OPD/resourses/3.png
 	/usr/lib/qt5/bin/rcc -name resource ../OPD/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
