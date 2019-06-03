@@ -20,9 +20,6 @@ menu::~menu()
 
 void menu::on_pushButton_clicked()
 {
-//    hide();
-//    PATH= new MainWindow(this);
-//    PATH->show();
     hide();
     mainMenu=new MainWindow(this);
     mainMenu->show();

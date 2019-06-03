@@ -28,6 +28,7 @@ class Ui_MainWindow
 {
 public:
     QAction *quit;
+    QAction *action;
     QWidget *centralwidget;
     QWidget *widget;
     QVBoxLayout *verticalLayout;
@@ -50,6 +51,11 @@ public:
         QIcon icon;
         icon.addFile(QStringLiteral(":/rec/resourses/2.png"), QSize(), QIcon::Normal, QIcon::Off);
         quit->setIcon(icon);
+        action = new QAction(MainWindow);
+        action->setObjectName(QStringLiteral("action"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/rec/resourses/1.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action->setIcon(icon1);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         widget = new QWidget(centralwidget);
@@ -95,6 +101,7 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menu->menuAction());
+        menu->addAction(action);
         menu->addAction(quit);
 
         retranslateUi(MainWindow);
@@ -106,6 +113,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         quit->setText(QApplication::translate("MainWindow", "\320\222\321\213\320\271\321\202\320\270 \320\270\320\267 \320\277\321\200\320\276\320\263\321\200\320\260\320\274\320\274\321\213", Q_NULLPTR));
+        action->setText(QApplication::translate("MainWindow", "\320\222\321\213\320\261\321\200\320\260\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272\320\276\320\262", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "\320\230\320\275\321\204\320\276\321\200\320\274\320\260\321\206\320\270\321\217 \320\276 \320\262\321\201\320\265\321\205 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272\320\260\321\205", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214 \320\227\320\237", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214 \320\276\321\202\320\277\321\203\321\201\320\272\320\275\321\213\320\265 \320\262\321\213\320\277\320\273\320\260\321\202\321\213", Q_NULLPTR));

@@ -22,7 +22,7 @@
     return numberObj;
 }
 /*метод для извлечения информации о сотрудниках из файла*/
-void parseCSVtoObj::readFile(string pathToFile, employee *obj){
+void parseCSVtoObj::readFile(string pathToFile, vector<employee> obj){
     string line, buf, workQuality, name, worktime, specialty;
     int experience=0;
     float salary=0;
@@ -32,6 +32,7 @@ void parseCSVtoObj::readFile(string pathToFile, employee *obj){
     if(fInput.is_open()){
         getline(fInput,line);
         while(!fInput.eof()){
+            employee onePerson;
                 getline(fInput,name,';');
                 if(name.length()==0)/*в случае, если не удалось считать файл по заданной структуре*/
                   break;
@@ -48,7 +49,8 @@ void parseCSVtoObj::readFile(string pathToFile, employee *obj){
                   }
                 getline(fInput,worktime,';');
                 getline(fInput,workQuality);
-                obj[i].setPrivateLines(name, specialty, experience, salary, worktime, workQuality);
+                onePerson.setPrivateLines(name, specialty, experience, salary, worktime, workQuality);
+                obj.push_back(onePerson);
                 i++;
         }
     }else

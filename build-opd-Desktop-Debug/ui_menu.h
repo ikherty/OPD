@@ -30,13 +30,13 @@ public:
     {
         if (menu->objectName().isEmpty())
             menu->setObjectName(QStringLiteral("menu"));
-        menu->resize(250, 143);
+        menu->resize(365, 143);
         pushButton = new QPushButton(menu);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(10, 70, 227, 32));
+        pushButton->setGeometry(QRect(70, 80, 227, 32));
         label = new QLabel(menu);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 10, 227, 51));
+        label->setGeometry(QRect(80, 10, 231, 31));
         QFont font;
         font.setFamily(QStringLiteral("Noto Nastaliq Urdu"));
         font.setPointSize(12);

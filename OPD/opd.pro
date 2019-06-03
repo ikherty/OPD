@@ -20,9 +20,10 @@ SOURCES += \
     paymentcalculation.cpp \
     example.cpp \
     menu.cpp \
-    pathfile.cpp \
     mainwindow.cpp \
-    employee.cpp
+    employee.cpp \
+    changesourcecsv.cpp \
+    listemployees.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,14 +34,16 @@ HEADERS += \
     parseCSVtoObj.h \
     paymentcalculation.h \
     menu.h \
-    pathfile.h \
     mainwindow.h \
-    employee.h
+    employee.h \
+    changesourcecsv.h \
+    listemployees.h
 
 FORMS += \
     menu.ui \
-    pathfile.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    changesourcecsv.ui \
+    listemployees.ui
 
 RESOURCES += \
     resource.qrc

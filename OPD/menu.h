@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+
 namespace Ui {
 class menu;
 }
@@ -13,6 +14,7 @@ class menu : public QDialog
 
 public:
     explicit menu(QWidget *parent = 0);
+
     ~menu();
 
 private slots:
@@ -20,8 +22,8 @@ private slots:
 
 private:
     Ui::menu *ui;
-    //MainWindow *PATH;
     MainWindow *mainMenu;
+
 };
 
 #endif // MENU_H
