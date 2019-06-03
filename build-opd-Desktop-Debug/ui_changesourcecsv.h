@@ -30,7 +30,7 @@ public:
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *userPath;
 
     void setupUi(QDialog *changeSourceCSV)
     {
@@ -58,10 +58,10 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        userPath = new QLineEdit(widget);
+        userPath->setObjectName(QStringLiteral("userPath"));
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(userPath);
 
 
         retranslateUi(changeSourceCSV);

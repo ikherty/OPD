@@ -92,9 +92,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->on_quit_triggered(); break;
         case 1: _t->on_pushButton_clicked(); break;
         case 2: _t->on_pushButton_2_clicked(); break;
-        case 3: _t->on_pushButton_3_clicked(); break;
-        case 4: _t->on_pushButton_4_clicked(); break;
-        case 5: _t->on_pushButton_5_clicked(); break;
+
         case 6: _t->on_action_triggered(); break;
         default: ;
         }

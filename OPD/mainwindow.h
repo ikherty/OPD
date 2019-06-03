@@ -5,6 +5,7 @@
 #include "employee.h"
 #include "changesourcecsv.h"
 #include "mainwindow.h"
+#include "winemployees.h"
 #include <vector>
 namespace Ui {
 class MainWindow;
@@ -30,6 +31,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     changeSourceCSV *changeFile;
+    winEmployees *list;
     int objCount;
     string PATH;
     std::vector<employee> employees;

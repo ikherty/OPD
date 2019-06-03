@@ -3,6 +3,7 @@
 #include "employee.h"
 #include "parseCSVtoObj.h"
 #include "changesourcecsv.h"
+#include "winemployees.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -31,26 +32,18 @@ void MainWindow::on_quit_triggered(){
 
 void MainWindow::on_pushButton_clicked(){
     //вывести инфу о сотрудниках, предложить уволить сотрудника и добавить
-    for(int i=0; i<objCount; i++){
-            cout<<i+1<<") ";
-            employees[i].showWorkerInfo();
-}
+//    for(int i=0; i<objCount; i++){
+//         cout<<i+1<<") ";
+//         employees[i].showWorkerInfo();
+//    }
+    hide();
+    list=new winEmployees(this);
+    list->show();
 }
 
 void MainWindow::on_pushButton_2_clicked(){
     //рассчитать зп
 }
 
-void MainWindow::on_pushButton_3_clicked(){
-    //отпускные
-}
-
-void MainWindow::on_pushButton_4_clicked(){
-    //больничные
-}
-
-void MainWindow::on_pushButton_5_clicked(){
-    //премия
-}
 
 
