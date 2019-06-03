@@ -2,8 +2,7 @@
 #define MENU_H
 
 #include <QDialog>
-#include "pathfile.h"
-//#include "content.h"
+#include "mainwindow.h"
 namespace Ui {
 class menu;
 }
@@ -21,7 +20,8 @@ private slots:
 
 private:
     Ui::menu *ui;
-    pathFile *PATH;
+    //MainWindow *PATH;
+    MainWindow *mainMenu;
 };
 
 #endif // MENU_H

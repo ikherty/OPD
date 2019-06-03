@@ -6,26 +6,60 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>385</width>
-    <height>303</height>
+    <width>292</width>
+    <height>275</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>90</y>
-      <width>105</width>
-      <height>39</height>
+      <x>20</x>
+      <y>20</y>
+      <width>246</width>
+      <height>186</height>
      </rect>
     </property>
-    <property name="text">
-     <string>достаточно</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Информация о всех сотрудниках</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Рассчитать ЗП</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>Рассчитать отпускные выплаты</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>Рассчитать больничные выплаты</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="text">
+        <string>Рассчитать премию</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -33,14 +67,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>385</width>
-     <height>35</height>
+     <width>292</width>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>Файл</string>
     </property>
+    <addaction name="action"/>
     <addaction name="quit"/>
    </widget>
    <addaction name="menu"/>
@@ -53,6 +88,15 @@
    </property>
    <property name="text">
     <string>Выйти из программы</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/resourses/1.png</normaloff>:/rec/resourses/1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выбрать список сотрудников</string>
    </property>
   </action>
  </widget>

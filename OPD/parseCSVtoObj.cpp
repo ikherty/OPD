@@ -22,7 +22,7 @@
     return numberObj;
 }
 /*метод для извлечения информации о сотрудниках из файла*/
-void parseCSVtoObj::readFile(string pathToFile, working *obj){
+void parseCSVtoObj::readFile(string pathToFile, employee *obj){
     string line, buf, workQuality, name, worktime, specialty;
     int experience=0;
     float salary=0;

@@ -1,16 +1,16 @@
 #include "menu.h"
 #include "ui_menu.h"
-#include "pathfile.h"
+#include "mainwindow.h"
 #include <QPixmap>
 menu::menu(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::menu)
 {
     ui->setupUi(this);
-    QPixmap pix(":/rec/resourses/3.png");
-    int w=ui->image->width();
-    int h=ui->image->height();
-    ui->image->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+//    QPixmap pix(":/rec/resourses/4.png");
+//    int w=ui->image->width();
+//    int h=ui->image->height();
+//    ui->image->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 menu::~menu()
@@ -20,7 +20,10 @@ menu::~menu()
 
 void menu::on_pushButton_clicked()
 {
+//    hide();
+//    PATH= new MainWindow(this);
+//    PATH->show();
     hide();
-    PATH= new pathFile(this);
-    PATH->show();
+    mainMenu=new MainWindow(this);
+    mainMenu->show();
 }

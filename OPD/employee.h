@@ -2,8 +2,8 @@
  Поля содержат данные, считанные с файла.
  Методы позволяют заполнять поля, выводить информацию на экран, менять статус сотрудника.*/
 
-#ifndef WORKING_H
-#define WORKING_H
+#ifndef employee_H
+#define employee_H
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 using namespace std;
 
-class working{
+class employee{
     string name; /*ФИО*/
     string specialty; /*должность*/
     int experience; /*стаж в месяцах*/
@@ -23,8 +23,8 @@ class working{
     string worktime; /*ставка (полный/неполный рабочий день)*/
     string workQuality; /*качество работы*/
 public:
-    working();
-    working(string name,string specialty, int experience, float salary, string worktime, string workQuality);
+    employee();
+    employee(string name,string specialty, int experience, float salary, string worktime, string workQuality);
     /*метод для записи в закрытые поля соответствующих данных*/
     void setPrivateLines(string name,string specialty, int experience, float salary, string worktime, string workQuality);
     /*метод для вывода информации о сотруднике*/
@@ -35,4 +35,4 @@ public:
     bool getStatus(string status);
 };
 
-#endif // WORKING_H
+#endif // employee_H

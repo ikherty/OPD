@@ -1,8 +1,8 @@
-#include "working.h"
+#include "employee.h"
 
-working::working(){}
+employee::employee(){}
 
-working::working(string name, string specialty, int experience, float salary, string worktime, string workQuality){
+employee::employee(string name, string specialty, int experience, float salary, string worktime, string workQuality){
     this->name=name;
     this->specialty=specialty;
     this->experience=experience;
@@ -11,7 +11,7 @@ working::working(string name, string specialty, int experience, float salary, st
     this->workQuality=workQuality;
 }
 
-void working::setPrivateLines(string name,string specialty, int experience, float salary, string worktime, string workQuality){
+void employee::setPrivateLines(string name,string specialty, int experience, float salary, string worktime, string workQuality){
     this->name=name;
     this->specialty=specialty;
     this->experience=experience;
@@ -20,7 +20,7 @@ void working::setPrivateLines(string name,string specialty, int experience, floa
     this->workQuality=workQuality;
 }
 
-void working::showWorkerInfo(){
+void employee::showWorkerInfo(){
     string buf;
     cout<<"Имя сотрудника: "<<name<<endl;
     cout<<"Должность: "<<specialty<<endl;
@@ -35,11 +35,11 @@ void working::showWorkerInfo(){
     cout<<endl;
 }
 
-void working::showWorkerName(int count){
+void employee::showWorkerName(int count){
     cout<<count+1<<". "<<name<<endl;
 }
 
-bool working::getStatus(string status){
+bool employee::getStatus(string status){
         if(status=="работает")
             return 1;
         else return 0;

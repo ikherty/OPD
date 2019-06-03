@@ -1,5 +1,5 @@
 #include "paymentcalculation.h"
-#include "working.h"
+#include "employee.h"
 
 float paymentCalculation::payroll(float salary, int worktime){
 //расчет ЗП по окладу, количеству рабочего времени

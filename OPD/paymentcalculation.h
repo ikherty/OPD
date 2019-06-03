@@ -3,7 +3,7 @@
 
 #ifndef PAYMENTCALCULATION_H
 #define PAYMENTCALCULATION_H
-#include "working.h"
+#include "employee.h"
 
 class paymentCalculation
 {

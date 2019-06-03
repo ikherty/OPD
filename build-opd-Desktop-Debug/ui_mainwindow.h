@@ -19,6 +19,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,7 +29,13 @@ class Ui_MainWindow
 public:
     QAction *quit;
     QWidget *centralwidget;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -37,7 +44,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(385, 303);
+        MainWindow->resize(292, 275);
         quit = new QAction(MainWindow);
         quit->setObjectName(QStringLiteral("quit"));
         QIcon icon;
@@ -45,13 +52,41 @@ public:
         quit->setIcon(icon);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        pushButton = new QPushButton(centralwidget);
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(20, 20, 246, 186));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton = new QPushButton(widget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(140, 90, 105, 39));
+
+        verticalLayout->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        verticalLayout->addWidget(pushButton_2);
+
+        pushButton_3 = new QPushButton(widget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+
+        verticalLayout->addWidget(pushButton_3);
+
+        pushButton_4 = new QPushButton(widget);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+
+        verticalLayout->addWidget(pushButton_4);
+
+        pushButton_5 = new QPushButton(widget);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+
+        verticalLayout->addWidget(pushButton_5);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 385, 35));
+        menubar->setGeometry(QRect(0, 0, 292, 28));
         menu = new QMenu(menubar);
         menu->setObjectName(QStringLiteral("menu"));
         MainWindow->setMenuBar(menubar);
@@ -71,7 +106,11 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         quit->setText(QApplication::translate("MainWindow", "\320\222\321\213\320\271\321\202\320\270 \320\270\320\267 \320\277\321\200\320\276\320\263\321\200\320\260\320\274\320\274\321\213", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "\320\264\320\276\321\201\321\202\320\260\321\202\320\276\321\207\320\275\320\276", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "\320\230\320\275\321\204\320\276\321\200\320\274\320\260\321\206\320\270\321\217 \320\276 \320\262\321\201\320\265\321\205 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272\320\260\321\205", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214 \320\227\320\237", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214 \320\276\321\202\320\277\321\203\321\201\320\272\320\275\321\213\320\265 \320\262\321\213\320\277\320\273\320\260\321\202\321\213", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214 \320\261\320\276\320\273\321\214\320\275\320\270\321\207\320\275\321\213\320\265 \320\262\321\213\320\277\320\273\320\260\321\202\321\213", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214 \320\277\321\200\320\265\320\274\320\270\321\216", Q_NULLPTR));
         menu->setTitle(QApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", Q_NULLPTR));
     } // retranslateUi
 

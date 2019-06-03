@@ -16,14 +16,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    working.cpp \
     parseCSVtoObj.cpp \
     paymentcalculation.cpp \
     example.cpp \
     menu.cpp \
     pathfile.cpp \
-    content.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    employee.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -31,18 +30,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    working.h \
     parseCSVtoObj.h \
     paymentcalculation.h \
     menu.h \
     pathfile.h \
-    content.h \
-    mainwindow.h
+    mainwindow.h \
+    employee.h
 
 FORMS += \
     menu.ui \
     pathfile.ui \
-    content.ui \
     mainwindow.ui
 
 RESOURCES += \
