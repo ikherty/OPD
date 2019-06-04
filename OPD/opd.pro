@@ -19,8 +19,6 @@ SOURCES += \
     parseCSVtoObj.cpp \
     paymentcalculation.cpp \
     example.cpp \
-    menu.cpp \
-    mainwindow.cpp \
     employee.cpp \
     changesourcecsv.cpp \
     winemployees.cpp
@@ -33,15 +31,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     parseCSVtoObj.h \
     paymentcalculation.h \
-    menu.h \
-    mainwindow.h \
     employee.h \
     changesourcecsv.h \
     winemployees.h
 
 FORMS += \
-    menu.ui \
-    mainwindow.ui \
     changesourcecsv.ui \
     winemployees.ui
 

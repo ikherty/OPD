@@ -2,7 +2,8 @@
 #define WINEMPLOYEES_H
 
 #include <QMainWindow>
-
+#include "changesourcecsv.h"
+#include <QToolBar>
 namespace Ui {
 class winEmployees;
 }
@@ -18,8 +19,12 @@ public:
 private slots:
     void on_action_triggered();
 
+    void on_action_2_triggered();
+
 private:
     Ui::winEmployees *ui;
+    QToolBar *firstToolBar;
+    changeSourceCSV *changeFile;
 };
 
 #endif // WINEMPLOYEES_H

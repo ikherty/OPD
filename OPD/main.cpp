@@ -9,7 +9,7 @@
 #include "parseCSVtoObj.h"
 #include "paymentcalculation.h"
 #include <QApplication>
-#include "menu.h"
+#include "winemployees.h"
 int main(int argc, char *argv[]){
     setlocale(LC_ALL,"rus");
     QApplication a(argc, argv);
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
 //        lbl.setPixmap( pix );
 //        lbl.resize( pix.size() );
 //        lbl.show();
-    menu w;
+    winEmployees w;
     w.show();
 //    int objCount;
 //    string PATH;
