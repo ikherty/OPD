@@ -18,8 +18,10 @@ public:
 
 private slots:
     void on_action_triggered();
-
     void on_action_2_triggered();
+    void readFile(const QString &filePath);
+
+    void on_action_3_triggered();
 
 private:
     Ui::winEmployees *ui;

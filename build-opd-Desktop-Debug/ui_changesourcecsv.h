@@ -14,11 +14,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,43 +26,41 @@ QT_BEGIN_NAMESPACE
 class Ui_changeSourceCSV
 {
 public:
-    QPushButton *pushButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *userPath;
+    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *changeSourceCSV)
     {
         if (changeSourceCSV->objectName().isEmpty())
             changeSourceCSV->setObjectName(QStringLiteral("changeSourceCSV"));
         changeSourceCSV->resize(290, 119);
-        pushButton = new QPushButton(changeSourceCSV);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(100, 70, 84, 32));
-        QFont font;
-        font.setPointSize(14);
-        pushButton->setFont(font);
-        widget = new QWidget(changeSourceCSV);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(20, 30, 251, 32));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(changeSourceCSV);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 30, 251, 32));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
-        QFont font1;
-        font1.setPointSize(14);
-        font1.setItalic(true);
-        label->setFont(font1);
+        QFont font;
+        font.setPointSize(14);
+        font.setItalic(true);
+        label->setFont(font);
 
         horizontalLayout->addWidget(label);
 
-        userPath = new QLineEdit(widget);
+        userPath = new QLineEdit(layoutWidget);
         userPath->setObjectName(QStringLiteral("userPath"));
 
         horizontalLayout->addWidget(userPath);
 
+        buttonBox = new QDialogButtonBox(changeSourceCSV);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setGeometry(QRect(60, 70, 174, 32));
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
         retranslateUi(changeSourceCSV);
 
@@ -72,7 +70,6 @@ public:
     void retranslateUi(QDialog *changeSourceCSV)
     {
         changeSourceCSV->setWindowTitle(QApplication::translate("changeSourceCSV", "Dialog", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("changeSourceCSV", "\320\236\320\232", Q_NULLPTR));
         label->setText(QApplication::translate("changeSourceCSV", "\320\243\320\272\320\260\320\267\320\260\321\202\321\214 \320\277\321\203\321\202\321\214:", Q_NULLPTR));
     } // retranslateUi
 

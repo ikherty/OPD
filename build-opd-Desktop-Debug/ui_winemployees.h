@@ -14,10 +14,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -35,7 +35,7 @@ public:
     QAction *action_7;
     QAction *action_8;
     QWidget *centralwidget;
-    QListWidget *listWidget;
+    QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -46,7 +46,7 @@ public:
     {
         if (winEmployees->objectName().isEmpty())
             winEmployees->setObjectName(QStringLiteral("winEmployees"));
-        winEmployees->resize(638, 440);
+        winEmployees->resize(736, 440);
         action = new QAction(winEmployees);
         action->setObjectName(QStringLiteral("action"));
         QIcon icon;
@@ -89,13 +89,13 @@ public:
         action_8->setIcon(icon7);
         centralwidget = new QWidget(winEmployees);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        listWidget = new QListWidget(centralwidget);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(10, 0, 621, 371));
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(0, 0, 731, 371));
         winEmployees->setCentralWidget(centralwidget);
         menubar = new QMenuBar(winEmployees);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 638, 28));
+        menubar->setGeometry(QRect(0, 0, 736, 28));
         menu = new QMenu(menubar);
         menu->setObjectName(QStringLiteral("menu"));
         menu_2 = new QMenu(menubar);
@@ -106,7 +106,6 @@ public:
         toolBar = new QToolBar(winEmployees);
         toolBar->setObjectName(QStringLiteral("toolBar"));
         winEmployees->addToolBar(Qt::TopToolBarArea, toolBar);
-        winEmployees->insertToolBarBreak(toolBar);
 
         menubar->addAction(menu->menuAction());
         menubar->addAction(menu_2->menuAction());

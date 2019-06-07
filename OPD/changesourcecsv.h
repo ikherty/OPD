@@ -16,10 +16,14 @@ public:
     ~changeSourceCSV();
 
 private slots:
-    void on_pushButton_clicked();
+    void pushButton_clicked();
 
 private:
     Ui::changeSourceCSV *ui;
+signals:
+    void pathDataBase(const QString &str);
+private slots:
+    void OKclicked();
 };
 
 #endif // CHANGESOURCECSV_H
