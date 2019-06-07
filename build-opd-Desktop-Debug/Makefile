@@ -56,9 +56,11 @@ SOURCES       = ../OPD/main.cpp \
 		../OPD/example.cpp \
 		../OPD/employee.cpp \
 		../OPD/changesourcecsv.cpp \
-		../OPD/winemployees.cpp qrc_resource.cpp \
+		../OPD/winemployees.cpp \
+		../OPD/dialog.cpp qrc_resource.cpp \
 		moc_changesourcecsv.cpp \
-		moc_winemployees.cpp
+		moc_winemployees.cpp \
+		moc_dialog.cpp
 OBJECTS       = main.o \
 		parseCSVtoObj.o \
 		paymentcalculation.o \
@@ -66,9 +68,11 @@ OBJECTS       = main.o \
 		employee.o \
 		changesourcecsv.o \
 		winemployees.o \
+		dialog.o \
 		qrc_resource.o \
 		moc_changesourcecsv.o \
-		moc_winemployees.o
+		moc_winemployees.o \
+		moc_dialog.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -147,13 +151,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../OPD/paymentcalculation.h \
 		../OPD/employee.h \
 		../OPD/changesourcecsv.h \
-		../OPD/winemployees.h ../OPD/main.cpp \
+		../OPD/winemployees.h \
+		../OPD/dialog.h ../OPD/main.cpp \
 		../OPD/parseCSVtoObj.cpp \
 		../OPD/paymentcalculation.cpp \
 		../OPD/example.cpp \
 		../OPD/employee.cpp \
 		../OPD/changesourcecsv.cpp \
-		../OPD/winemployees.cpp
+		../OPD/winemployees.cpp \
+		../OPD/dialog.cpp
 QMAKE_TARGET  = opd
 DESTDIR       = 
 TARGET        = opd
@@ -162,7 +168,7 @@ TARGET        = opd
 first: all
 ####### Build rules
 
-$(TARGET): ui_changesourcecsv.h ui_winemployees.h $(OBJECTS)  
+$(TARGET): ui_changesourcecsv.h ui_winemployees.h ui_dialog.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../OPD/opd.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -340,9 +346,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../OPD/resource.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../OPD/parseCSVtoObj.h ../OPD/paymentcalculation.h ../OPD/employee.h ../OPD/changesourcecsv.h ../OPD/winemployees.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../OPD/main.cpp ../OPD/parseCSVtoObj.cpp ../OPD/paymentcalculation.cpp ../OPD/example.cpp ../OPD/employee.cpp ../OPD/changesourcecsv.cpp ../OPD/winemployees.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../OPD/changesourcecsv.ui ../OPD/winemployees.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../OPD/parseCSVtoObj.h ../OPD/paymentcalculation.h ../OPD/employee.h ../OPD/changesourcecsv.h ../OPD/winemployees.h ../OPD/dialog.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../OPD/main.cpp ../OPD/parseCSVtoObj.cpp ../OPD/paymentcalculation.cpp ../OPD/example.cpp ../OPD/employee.cpp ../OPD/changesourcecsv.cpp ../OPD/winemployees.cpp ../OPD/dialog.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../OPD/changesourcecsv.ui ../OPD/winemployees.ui ../OPD/dialog.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -377,8 +383,10 @@ qrc_resource.cpp: ../OPD/resource.qrc \
 		../OPD/resourses/5.png \
 		../OPD/resourses/4.png \
 		../OPD/resourses/8.png \
+		../OPD/resourses/12.png \
 		../OPD/resourses/3.png \
-		../OPD/resourses/7.png
+		../OPD/resourses/7.png \
+		../OPD/resourses/11.png
 	/usr/lib/qt5/bin/rcc -name resource ../OPD/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -387,9 +395,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_changesourcecsv.cpp moc_winemployees.cpp
+compiler_moc_header_make_all: moc_changesourcecsv.cpp moc_winemployees.cpp moc_dialog.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_changesourcecsv.cpp moc_winemployees.cpp
+	-$(DEL_FILE) moc_changesourcecsv.cpp moc_winemployees.cpp moc_dialog.cpp
 moc_changesourcecsv.cpp: ../OPD/changesourcecsv.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -401,11 +409,16 @@ moc_winemployees.cpp: ../OPD/changesourcecsv.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/qw/opd/OPD -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../OPD/winemployees.h -o moc_winemployees.cpp
 
+moc_dialog.cpp: ../OPD/dialog.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/qw/opd/OPD -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../OPD/dialog.h -o moc_dialog.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_changesourcecsv.h ui_winemployees.h
+compiler_uic_make_all: ui_changesourcecsv.h ui_winemployees.h ui_dialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_changesourcecsv.h ui_winemployees.h
+	-$(DEL_FILE) ui_changesourcecsv.h ui_winemployees.h ui_dialog.h
 ui_changesourcecsv.h: ../OPD/changesourcecsv.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../OPD/changesourcecsv.ui -o ui_changesourcecsv.h
@@ -413,6 +426,10 @@ ui_changesourcecsv.h: ../OPD/changesourcecsv.ui \
 ui_winemployees.h: ../OPD/winemployees.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../OPD/winemployees.ui -o ui_winemployees.h
+
+ui_dialog.h: ../OPD/dialog.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../OPD/dialog.ui -o ui_dialog.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -452,8 +469,15 @@ changesourcecsv.o: ../OPD/changesourcecsv.cpp ../OPD/changesourcecsv.h \
 
 winemployees.o: ../OPD/winemployees.cpp ../OPD/winemployees.h \
 		../OPD/changesourcecsv.h \
-		ui_winemployees.h
+		ui_winemployees.h \
+		../OPD/parseCSVtoObj.h \
+		../OPD/employee.h \
+		../OPD/paymentcalculation.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o winemployees.o ../OPD/winemployees.cpp
+
+dialog.o: ../OPD/dialog.cpp ../OPD/dialog.h \
+		ui_dialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o ../OPD/dialog.cpp
 
 qrc_resource.o: qrc_resource.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resource.o qrc_resource.cpp
@@ -463,6 +487,9 @@ moc_changesourcecsv.o: moc_changesourcecsv.cpp
 
 moc_winemployees.o: moc_winemployees.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_winemployees.o moc_winemployees.cpp
+
+moc_dialog.o: moc_dialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dialog.o moc_dialog.cpp
 
 ####### Install
 

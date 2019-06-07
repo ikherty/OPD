@@ -11,16 +11,30 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string comment="qq">0</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/rec/resourses/11.png</normaloff>:/rec/resourses/11.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>451</width>
+      <height>341</height>
+     </rect>
+    </property>
+   </widget>
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>731</width>
-      <height>371</height>
+      <x>20</x>
+      <y>30</y>
+      <width>221</width>
+      <height>211</height>
      </rect>
     </property>
    </widget>
@@ -31,57 +45,54 @@
      <x>0</x>
      <y>0</y>
      <width>736</width>
-     <height>28</height>
+     <height>35</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>Файл</string>
     </property>
-    <addaction name="action_2"/>
-    <addaction name="action"/>
+    <addaction name="changeDataBase"/>
+    <addaction name="quit"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
      <string>Правка</string>
     </property>
-    <addaction name="action_3"/>
-    <addaction name="action_4"/>
+    <addaction name="addUser"/>
+    <addaction name="removeUser"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
      <string>Сервис</string>
     </property>
-    <addaction name="action_5"/>
-    <addaction name="action_6"/>
-    <addaction name="action_7"/>
-    <addaction name="action_8"/>
+    <addaction name="calculateSalary"/>
+    <addaction name="calculatePremium"/>
+    <addaction name="calculateHospitalPayments"/>
+    <addaction name="calculateVacationPay"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
    <addaction name="menu_3"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
-   <addaction name="action_2"/>
-   <addaction name="action_3"/>
-   <addaction name="action_4"/>
-   <addaction name="action_5"/>
-   <addaction name="action_6"/>
-   <addaction name="action_7"/>
-   <addaction name="action_8"/>
-   <addaction name="action"/>
+   <addaction name="changeDataBase"/>
+   <addaction name="addUser"/>
+   <addaction name="removeUser"/>
+   <addaction name="calculateSalary"/>
+   <addaction name="calculatePremium"/>
+   <addaction name="calculateHospitalPayments"/>
+   <addaction name="calculateVacationPay"/>
+   <addaction name="quit"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="action">
+  <action name="quit">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/2.png</normaloff>:/rec/resourses/2.png</iconset>
@@ -90,7 +101,7 @@
     <string>Выйти из программы</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="changeDataBase">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/1.png</normaloff>:/rec/resourses/1.png</iconset>
@@ -99,7 +110,7 @@
     <string>Выбрать базу сотрудников</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="addUser">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/3.png</normaloff>:/rec/resourses/3.png</iconset>
@@ -108,7 +119,7 @@
     <string>Добавить нового сотрудника</string>
    </property>
   </action>
-  <action name="action_4">
+  <action name="removeUser">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/4.png</normaloff>:/rec/resourses/4.png</iconset>
@@ -117,7 +128,7 @@
     <string>Удалить сотрудника</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="calculateSalary">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/5.png</normaloff>:/rec/resourses/5.png</iconset>
@@ -126,7 +137,7 @@
     <string>Рассчитать ЗП</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="calculatePremium">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/6.png</normaloff>:/rec/resourses/6.png</iconset>
@@ -135,7 +146,7 @@
     <string>Рассчитать премию</string>
    </property>
   </action>
-  <action name="action_7">
+  <action name="calculateHospitalPayments">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/8.png</normaloff>:/rec/resourses/8.png</iconset>
@@ -144,7 +155,7 @@
     <string>Рассчитать больничные выплаты</string>
    </property>
   </action>
-  <action name="action_8">
+  <action name="calculateVacationPay">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/rec/resourses/7.png</normaloff>:/rec/resourses/7.png</iconset>

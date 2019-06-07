@@ -17,11 +17,11 @@ public:
     ~winEmployees();
 
 private slots:
-    void on_action_triggered();
-    void on_action_2_triggered();
     void readFile(const QString &filePath);
-
-    void on_action_3_triggered();
+    //void init();
+    void on_quit_triggered();
+    void on_changeDataBase_triggered();
+    void on_addUser_triggered();
 
 private:
     Ui::winEmployees *ui;

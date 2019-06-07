@@ -16,7 +16,6 @@ void changeSourceCSV::OKclicked(){
     close();
 }
 
-
 changeSourceCSV::~changeSourceCSV()
 {
     delete ui;

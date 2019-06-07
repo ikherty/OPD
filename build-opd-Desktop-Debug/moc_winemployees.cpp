@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_winEmployees_t {
     QByteArrayData data[7];
-    char stringdata0[96];
+    char stringdata0[99];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,17 +32,17 @@ struct qt_meta_stringdata_winEmployees_t {
 static const qt_meta_stringdata_winEmployees_t qt_meta_stringdata_winEmployees = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "winEmployees"
-QT_MOC_LITERAL(1, 13, 19), // "on_action_triggered"
-QT_MOC_LITERAL(2, 33, 0), // ""
-QT_MOC_LITERAL(3, 34, 21), // "on_action_2_triggered"
-QT_MOC_LITERAL(4, 56, 8), // "readFile"
-QT_MOC_LITERAL(5, 65, 8), // "filePath"
-QT_MOC_LITERAL(6, 74, 21) // "on_action_3_triggered"
+QT_MOC_LITERAL(1, 13, 8), // "readFile"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 8), // "filePath"
+QT_MOC_LITERAL(4, 32, 17), // "on_quit_triggered"
+QT_MOC_LITERAL(5, 50, 27), // "on_changeDataBase_triggered"
+QT_MOC_LITERAL(6, 78, 20) // "on_addUser_triggered"
 
     },
-    "winEmployees\0on_action_triggered\0\0"
-    "on_action_2_triggered\0readFile\0filePath\0"
-    "on_action_3_triggered"
+    "winEmployees\0readFile\0\0filePath\0"
+    "on_quit_triggered\0on_changeDataBase_triggered\0"
+    "on_addUser_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,15 +60,15 @@ static const uint qt_meta_data_winEmployees[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x08 /* Private */,
-       3,    0,   35,    2, 0x08 /* Private */,
-       4,    1,   36,    2, 0x08 /* Private */,
+       1,    1,   34,    2, 0x08 /* Private */,
+       4,    0,   37,    2, 0x08 /* Private */,
+       5,    0,   38,    2, 0x08 /* Private */,
        6,    0,   39,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
 
        0        // eod
@@ -80,10 +80,10 @@ void winEmployees::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         winEmployees *_t = static_cast<winEmployees *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_action_triggered(); break;
-        case 1: _t->on_action_2_triggered(); break;
-        case 2: _t->readFile((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 3: _t->on_action_3_triggered(); break;
+        case 0: _t->readFile((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: _t->on_quit_triggered(); break;
+        case 2: _t->on_changeDataBase_triggered(); break;
+        case 3: _t->on_addUser_triggered(); break;
         default: ;
         }
     }

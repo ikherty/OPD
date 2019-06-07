@@ -21,7 +21,8 @@ SOURCES += \
     example.cpp \
     employee.cpp \
     changesourcecsv.cpp \
-    winemployees.cpp
+    winemployees.cpp \
+    dialog.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,11 +34,13 @@ HEADERS += \
     paymentcalculation.h \
     employee.h \
     changesourcecsv.h \
-    winemployees.h
+    winemployees.h \
+    dialog.h
 
 FORMS += \
     changesourcecsv.ui \
-    winemployees.ui
+    winemployees.ui \
+    dialog.ui
 
 RESOURCES += \
     resource.qrc
