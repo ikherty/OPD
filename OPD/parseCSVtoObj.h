@@ -12,7 +12,7 @@ public:
     /*функция для счета количества объектов*/
     static int objCount(string pathToFile);
     /*метод для извлечения данных из файла*/
-    static void readFile(string pathToFile, vector<employee> obj);
+    static void readFile(string pathToFile, vector<employee> &obj);
 };
 
 #endif // PARSECSVTOOBJ_H

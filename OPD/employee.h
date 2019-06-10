@@ -16,7 +16,7 @@
 #include <QAbstractTableModel>
 using namespace std;
 
-class employee/*:public QAbstractItemModel*/{
+class employee{
     string name; /*ФИО*/
     string specialty; /*должность*/
     int experience; /*стаж в месяцах*/
@@ -25,9 +25,11 @@ class employee/*:public QAbstractItemModel*/{
     string workQuality; /*качество работы*/
 public:
     employee();
-    employee(string name,string specialty, int experience, float salary, string worktime, string workQuality);
+    employee(string name,string specialty, int experience,
+             float salary, string worktime, string workQuality);
     /*метод для записи в закрытые поля соответствующих данных*/
-    void setPrivateLines(string name,string specialty, int experience, float salary, string worktime, string workQuality);
+    void setPrivateLines(string name,string specialty, int experience,
+                         float salary, string worktime, string workQuality);
     /*метод для вывода информации о сотруднике*/
     void showWorkerInfo();
     /*метод для вывода имени сотрудника*/

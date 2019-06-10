@@ -24,6 +24,16 @@ private slots:
     void on_changeDataBase_triggered();
     void on_addUser_triggered();
 
+    void on_removeUser_triggered();
+
+    void on_calculateSalary_triggered();
+
+    void on_calculatePremium_triggered();
+
+    void on_calculateHospitalPayments_triggered();
+
+    void on_calculateVacationPay_triggered();
+
 private:
     Ui::winEmployees *ui;
     changeSourceCSV *changeFile;

@@ -6,6 +6,7 @@
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
+#include "paymentcalculation.h"
 #include "adduser.h"
 
 winEmployees::winEmployees(QWidget *parent) :
@@ -40,7 +41,6 @@ void winEmployees::readFile(const QString &filePath){
     QTextStream stream(&mFile);
     QString buffer=stream.readAll();
     ui->textEdit->setText(buffer);
-    //ui->tableView->set
 
     mFile.flush();
     mFile.close();
@@ -58,16 +58,35 @@ void winEmployees::on_changeDataBase_triggered(){
 
 void winEmployees::on_addUser_triggered(){
     addMan=new addUser(this);
+    addMan->translate(ui);
     addMan->show();
-    //==============
+}
+
+void winEmployees::on_removeUser_triggered(){
     QFile mFile("/home/qw/opd/form");
     if(!mFile.open(QFile::WriteOnly|QFile::Text)){
         QMessageBox::information(this, "Предупреждение",("Некорректный путь."),"OK");
-        ui->statusBar->showMessage("Write to file.");
+        winEmployees::ui->statusBar->showMessage("Write to file.");
         return;
     }
     QTextStream stream(&mFile);
     stream<<ui->textEdit->toPlainText();
-    //QMessageBox::information(this, "Предупреждение",("Файл обновлён."),"OK");
     mFile.close();
+}
+
+void winEmployees::on_calculateSalary_triggered(){
+    QMessageBox::information(this, "ЗП",("ЗП сотрудника составляет "+emp.payroll()+" руб."),"OK");
+}
+
+void winEmployees::on_calculatePremium_triggered(){
+    QMessageBox::information(this, "Премия",("Премия сотрудника составляет "+emp.calculatePremium()+" руб."),"OK");
+}
+
+
+void winEmployees::on_calculateHospitalPayments_triggered(){
+    QMessageBox::information(this, "Больничные выплаты",("Больничные сотрудника составляют "+emp.calculateHospital()+" руб."),"OK");
+}
+
+void winEmployees::on_calculateVacationPay_triggered(){
+    QMessageBox::information(this, "Отпускные выплаты",("Отпускные сотрудника составляют "+emp.calculateVacation()+" руб."),"OK")
 }

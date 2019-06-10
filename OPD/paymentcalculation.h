@@ -5,8 +5,7 @@
 #define PAYMENTCALCULATION_H
 #include "employee.h"
 
-class paymentCalculation
-{
+class paymentCalculation{
 public:
     /*расчет ЗП по окладу, количеству рабочего времени*/
     static float payroll(float salary, int worktime);

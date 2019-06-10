@@ -11,7 +11,8 @@ employee::employee(string name, string specialty, int experience, float salary, 
     this->workQuality=workQuality;
 }
 
-void employee::setPrivateLines(string name,string specialty, int experience, float salary, string worktime, string workQuality){
+void employee::setPrivateLines(string name,string specialty, int experience,
+                               float salary, string worktime, string workQuality){
     this->name=name;
     this->specialty=specialty;
     this->experience=experience;
