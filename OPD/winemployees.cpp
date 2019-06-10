@@ -1,19 +1,31 @@
 #include "winemployees.h"
 #include "ui_winemployees.h"
+#include "employee.h"
+#include "parseCSVtoObj.h"
 #include <QMessageBox>
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
+#include "adduser.h"
 
 winEmployees::winEmployees(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::winEmployees)
 {
     ui->setupUi(this);
-    //setCentralWidget(ui->tableView);
+    setCentralWidget(ui->tableWidget);
+    ui->tableWidget->setRowCount(10);
+    ui->tableWidget->setColumnCount(3);
+    QMessageBox::information(this, "Предупреждение",("Для расчета выберите сотрудника."),"OK");
+    ui->tableWidget->setHorizontalHeaderLabels(QStringList()<<"ФИО"<<"Должность"<<"Оклад");
     ui->statusBar->showMessage("Ready to work.");
-    firstToolBar = new QToolBar();
-    addToolBar(firstToolBar);
+    //firstToolBar = new QToolBar();
+    //addToolBar(firstToolBar);
+    //emp = new employee();
+    //emp->();
+    string PATH="/home/qw/opd/data.csv";
+    int objCount=parseCSVtoObj::objCount(PATH);
+    parseCSVtoObj::readFile(PATH,emp);
 }
 
 winEmployees::~winEmployees()
@@ -32,7 +44,7 @@ void winEmployees::readFile(const QString &filePath){
     QTextStream stream(&mFile);
     QString buffer=stream.readAll();
     ui->textEdit->setText(buffer);
-    ui->tableView->set
+    //ui->tableView->set
 
     mFile.flush();
     mFile.close();
@@ -53,6 +65,9 @@ void winEmployees::on_changeDataBase_triggered()
 
 void winEmployees::on_addUser_triggered()
 {
+    addMan=new addUser(this);
+    addMan->show();
+    //==============
     QFile mFile("/home/qw/opd/form");
     if(!mFile.open(QFile::WriteOnly|QFile::Text)){
         QMessageBox::information(this, "Предупреждение",("Некорректный путь."),"OK");
@@ -61,6 +76,6 @@ void winEmployees::on_addUser_triggered()
     }
     QTextStream stream(&mFile);
     stream<<ui->textEdit->toPlainText();
-    QMessageBox::information(this, "Предупреждение",("Файл обновлён."),"OK");
+    //QMessageBox::information(this, "Предупреждение",("Файл обновлён."),"OK");
     mFile.close();
 }

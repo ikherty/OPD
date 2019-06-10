@@ -39,7 +39,7 @@ public:
         changeSourceCSV->resize(290, 119);
         layoutWidget = new QWidget(changeSourceCSV);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 30, 251, 32));
+        layoutWidget->setGeometry(QRect(20, 30, 251, 39));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -69,7 +69,7 @@ public:
 
     void retranslateUi(QDialog *changeSourceCSV)
     {
-        changeSourceCSV->setWindowTitle(QApplication::translate("changeSourceCSV", "Dialog", Q_NULLPTR));
+        changeSourceCSV->setWindowTitle(QApplication::translate("changeSourceCSV", "\320\222\321\213\320\261\320\276\321\200 \320\261\320\260\320\267\321\213 \320\264\320\260\320\275\320\275\321\213\321\205", Q_NULLPTR));
         label->setText(QApplication::translate("changeSourceCSV", "\320\243\320\272\320\260\320\267\320\260\321\202\321\214 \320\277\321\203\321\202\321\214:", Q_NULLPTR));
     } // retranslateUi
 

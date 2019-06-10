@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::addUser *ui;
+private slots:
+    void OKclicked();
 };
 
 #endif // ADDUSER_H

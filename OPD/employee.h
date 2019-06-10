@@ -16,7 +16,7 @@
 #include <QAbstractTableModel>
 using namespace std;
 
-class employee:public QAbstractItemModel{
+class employee/*:public QAbstractItemModel*/{
     string name; /*ФИО*/
     string specialty; /*должность*/
     int experience; /*стаж в месяцах*/

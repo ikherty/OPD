@@ -18,7 +18,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -37,8 +37,8 @@ public:
     QAction *calculateHospitalPayments;
     QAction *calculateVacationPay;
     QWidget *centralwidget;
-    QTableView *tableView;
     QTextEdit *textEdit;
+    QTableWidget *tableWidget;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -96,12 +96,12 @@ public:
         calculateVacationPay->setIcon(icon8);
         centralwidget = new QWidget(winEmployees);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        tableView = new QTableView(centralwidget);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(280, 0, 451, 341));
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(20, 30, 221, 211));
+        textEdit->setGeometry(QRect(20, 150, 271, 191));
+        tableWidget = new QTableWidget(centralwidget);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(180, 10, 256, 192));
         winEmployees->setCentralWidget(centralwidget);
         menubar = new QMenuBar(winEmployees);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -116,7 +116,6 @@ public:
         toolBar = new QToolBar(winEmployees);
         toolBar->setObjectName(QStringLiteral("toolBar"));
         winEmployees->addToolBar(Qt::TopToolBarArea, toolBar);
-        winEmployees->insertToolBarBreak(toolBar);
         statusBar = new QStatusBar(winEmployees);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         winEmployees->setStatusBar(statusBar);
@@ -148,7 +147,7 @@ public:
 
     void retranslateUi(QMainWindow *winEmployees)
     {
-        winEmployees->setWindowTitle(QApplication::translate("winEmployees", "0", "qq"));
+        winEmployees->setWindowTitle(QApplication::translate("winEmployees", "\320\243\321\207\320\265\321\202 \320\272\320\260\320\264\321\200\320\276\320\262 SwiftNet", Q_NULLPTR));
         quit->setText(QApplication::translate("winEmployees", "\320\222\321\213\320\271\321\202\320\270 \320\270\320\267 \320\277\321\200\320\276\320\263\321\200\320\260\320\274\320\274\321\213", Q_NULLPTR));
         changeDataBase->setText(QApplication::translate("winEmployees", "\320\222\321\213\320\261\321\200\320\260\321\202\321\214 \320\261\320\260\320\267\321\203 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272\320\276\320\262", Q_NULLPTR));
         addUser->setText(QApplication::translate("winEmployees", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\275\320\276\320\262\320\276\320\263\320\276 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272\320\260", Q_NULLPTR));

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "changesourcecsv.h"
 #include <QToolBar>
+#include "employee.h"
+#include "adduser.h"
 namespace Ui {
 class winEmployees;
 }
@@ -25,8 +27,11 @@ private slots:
 
 private:
     Ui::winEmployees *ui;
-    QToolBar *firstToolBar;
+    //QToolBar *firstToolBar;
     changeSourceCSV *changeFile;
+    addUser *addMan;
+    vector <employee> emp;
+    void createUI(const QStringList &headers);
 };
 
 #endif // WINEMPLOYEES_H

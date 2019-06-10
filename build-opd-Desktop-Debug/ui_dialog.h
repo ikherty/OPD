@@ -24,7 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Dialog
+class Ui_addUser
 {
 public:
     QWidget *layoutWidget;
@@ -49,12 +49,12 @@ public:
     QLineEdit *lineEdit_6;
     QDialogButtonBox *buttonBox;
 
-    void setupUi(QDialog *Dialog)
+    void setupUi(QDialog *addUser)
     {
-        if (Dialog->objectName().isEmpty())
-            Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(324, 330);
-        layoutWidget = new QWidget(Dialog);
+        if (addUser->objectName().isEmpty())
+            addUser->setObjectName(QStringLiteral("addUser"));
+        addUser->resize(324, 330);
+        layoutWidget = new QWidget(addUser);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 10, 301, 311));
         verticalLayout = new QVBoxLayout(layoutWidget);
@@ -157,26 +157,26 @@ public:
         verticalLayout->addWidget(buttonBox);
 
 
-        retranslateUi(Dialog);
+        retranslateUi(addUser);
 
-        QMetaObject::connectSlotsByName(Dialog);
+        QMetaObject::connectSlotsByName(addUser);
     } // setupUi
 
-    void retranslateUi(QDialog *Dialog)
+    void retranslateUi(QDialog *addUser)
     {
-        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("Dialog", "\320\244\320\230\320\236:", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Dialog", "\320\224\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214:", Q_NULLPTR));
-        label_3->setText(QApplication::translate("Dialog", "\320\241\321\202\320\260\320\266:", Q_NULLPTR));
-        label_4->setText(QApplication::translate("Dialog", "\320\236\320\272\320\273\320\260\320\264:", Q_NULLPTR));
-        label_5->setText(QApplication::translate("Dialog", "\320\241\321\202\320\260\320\262\320\272\320\260:", Q_NULLPTR));
-        label_6->setText(QApplication::translate("Dialog", "\320\232\320\260\321\207\320\265\321\201\321\202\320\262\320\276 \321\200\320\260\320\261\320\276\321\202\321\213:", Q_NULLPTR));
+        addUser->setWindowTitle(QApplication::translate("addUser", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("addUser", "\320\244\320\230\320\236:", Q_NULLPTR));
+        label_2->setText(QApplication::translate("addUser", "\320\224\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214:", Q_NULLPTR));
+        label_3->setText(QApplication::translate("addUser", "\320\241\321\202\320\260\320\266:", Q_NULLPTR));
+        label_4->setText(QApplication::translate("addUser", "\320\236\320\272\320\273\320\260\320\264:", Q_NULLPTR));
+        label_5->setText(QApplication::translate("addUser", "\320\241\321\202\320\260\320\262\320\272\320\260:", Q_NULLPTR));
+        label_6->setText(QApplication::translate("addUser", "\320\232\320\260\321\207\320\265\321\201\321\202\320\262\320\276 \321\200\320\260\320\261\320\276\321\202\321\213:", Q_NULLPTR));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Dialog: public Ui_Dialog {};
+    class addUser: public Ui_addUser {};
 } // namespace Ui
 
 QT_END_NAMESPACE
