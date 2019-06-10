@@ -16,13 +16,11 @@ void changeSourceCSV::OKclicked(){
     close();
 }
 
-changeSourceCSV::~changeSourceCSV()
-{
+changeSourceCSV::~changeSourceCSV(){
     delete ui;
 }
 
-void changeSourceCSV::pushButton_clicked()
-{
+void changeSourceCSV::pushButton_clicked(){
     //QString userPath =ui->userPath->text();
     //QMessageBox::information(this, "Предупреждение",("Файл выбран."),"OK");
     //hide();

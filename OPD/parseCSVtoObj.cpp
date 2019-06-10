@@ -26,8 +26,6 @@ void parseCSVtoObj::readFile(string pathToFile, vector<employee> obj){
     string line, buf, workQuality, name, worktime, specialty;
     int experience=0;
     float salary=0;
-    //int i=0;
-    //pathToFile="/home/qw/format";
     ifstream fInput(pathToFile,ios_base::out);
     if(fInput.is_open()){
         getline(fInput,line);
@@ -51,9 +49,9 @@ void parseCSVtoObj::readFile(string pathToFile, vector<employee> obj){
                 getline(fInput,workQuality);
                 onePerson.setPrivateLines(name, specialty, experience, salary, worktime, workQuality);
                 obj.push_back(onePerson);
-                //i++;
         }
-    }else
+    }
+    else
         cout<<"Файл отсутствует.";
     fInput.close();
 }

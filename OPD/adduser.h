@@ -3,12 +3,11 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui{
 class addUser;
 }
 
-class addUser : public QDialog
-{
+class addUser : public QDialog{
     Q_OBJECT
 
 public:

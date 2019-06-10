@@ -7,8 +7,7 @@ namespace Ui {
 class changeSourceCSV;
 }
 
-class changeSourceCSV : public QDialog
-{
+class changeSourceCSV : public QDialog{
     Q_OBJECT
 
 public:

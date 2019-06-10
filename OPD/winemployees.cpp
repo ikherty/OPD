@@ -10,26 +10,22 @@
 
 winEmployees::winEmployees(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::winEmployees)
-{
+    ui(new Ui::winEmployees){
     ui->setupUi(this);
     setCentralWidget(ui->tableWidget);
-    ui->tableWidget->setRowCount(10);
-    ui->tableWidget->setColumnCount(3);
-    QMessageBox::information(this, "Предупреждение",("Для расчета выберите сотрудника."),"OK");
-    ui->tableWidget->setHorizontalHeaderLabels(QStringList()<<"ФИО"<<"Должность"<<"Оклад");
-    ui->statusBar->showMessage("Ready to work.");
-    //firstToolBar = new QToolBar();
-    //addToolBar(firstToolBar);
-    //emp = new employee();
-    //emp->();
     string PATH="/home/qw/opd/data.csv";
     int objCount=parseCSVtoObj::objCount(PATH);
     parseCSVtoObj::readFile(PATH,emp);
+    ui->tableWidget->setRowCount(objCount);//получить количество из файла
+    ui->tableWidget->setColumnCount(6);
+    ui->tableWidget->setHorizontalHeaderLabels(QStringList()<<"ФИО"<<"Должность"<<"Стаж"<<"Оклад"<<"Ставка"<<"Качество работы");
+    ui->statusBar->showMessage("Ready to work.");
+    
+}
+void winEmployees::init(){
 }
 
-winEmployees::~winEmployees()
-{
+winEmployees::~winEmployees(){
     delete ui;
 }
 
@@ -50,21 +46,17 @@ void winEmployees::readFile(const QString &filePath){
     mFile.close();
 }
 
-void winEmployees::on_quit_triggered()
-{
+void winEmployees::on_quit_triggered(){
     QApplication::quit();
 }
 
-void winEmployees::on_changeDataBase_triggered()
-{
-    //hide();
+void winEmployees::on_changeDataBase_triggered(){
     changeFile=new changeSourceCSV(this);
     changeFile->show();
     connect(changeFile, SIGNAL(pathDataBase(QString)),this, SLOT(readFile(QString)));
 }
 
-void winEmployees::on_addUser_triggered()
-{
+void winEmployees::on_addUser_triggered(){
     addMan=new addUser(this);
     addMan->show();
     //==============

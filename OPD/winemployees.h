@@ -10,8 +10,7 @@ namespace Ui {
 class winEmployees;
 }
 
-class winEmployees : public QMainWindow
-{
+class winEmployees : public QMainWindow{
     Q_OBJECT
 
 public:
@@ -20,14 +19,13 @@ public:
 
 private slots:
     void readFile(const QString &filePath);
-    //void init();
+    void init();
     void on_quit_triggered();
     void on_changeDataBase_triggered();
     void on_addUser_triggered();
 
 private:
     Ui::winEmployees *ui;
-    //QToolBar *firstToolBar;
     changeSourceCSV *changeFile;
     addUser *addMan;
     vector <employee> emp;
